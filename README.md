@@ -1,11 +1,8 @@
-# Documentation HTML Template
-A Sample HTML Documentation Template for Wordpress Themes, HTML Templates and Plugins. Built with Bootstrap 3. 
+# Magento 2 - Front-end Awesome Features
+A list with some features of Magento 2's front-end.
 
-##Installation
-Download the package as ZIP and edit the HTML and CSS as you like.
+## Github Page
+Click in this link to see the list: https://lucascalazans.github.io/magento2-frontend-awesome/
 
-##Demo
-Click this link for a live demo : http://surjithctly.github.io/documentation-html-template/
-
-##Credits
-This is a modified version of [Template Visual's](http://themeforest.net/user/templatevisual?ref=surjithctly&utm_source=github_surjithctly_docs) Documentation : Actual Documentation Link : http://goo.gl/RVwdHE
+## Credits
+Thank you to [Surjith S M](https://github.com/surjithctly). This repository is a fork of his documentation template.
