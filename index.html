@@ -58,26 +58,21 @@
                 <div class="col-md-3">
                     <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200" role="navigation">
                         <ul class="nav">
-                            <li><a href="#front-end">Front-end</a>
-                                <ul class="nav">
-                                    <li><a href="#form-validators">Form Validators</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="#form-validators">Form Validators</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="col-md-9">
-                    <section id="front-end" class="section">
+                    <section id="form-validators" class="section">
                         <div class="row">
                             <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Front-end <a href="#top">#back to top</a><hr></h2>
+                                <h2 class="dark-text">Form Validators - <a href="#top">#back to top</a><hr></h2>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-12">
-                                <h4 id="form-validators">Form Validators - <a href="#top">#back to top</a></h4>
-                                <p>The bellow instructions will help you to create a custom validation to your forms</p>
+                                <p>The instructions bellow will help you to create a custom validation to your forms</p>
 
                                 <h4>
                                     1. Create your validation rule -
@@ -99,12 +94,12 @@
                                     });
                                 </pre>
                                 <p>
-                                    First of all you will need to import jQuery and jQuery Validate (lines 2 and 3) to add a new method.
+                                    First of all you need to import jQuery and jQuery Validate (lines 2 and 3) to be able to add a new method.
                                 </p>
                                 <p>
                                     The <strong>addMethod</strong> function accepts 3 parameters.
                                     The first is the validation name, that you will use to call it on html.
-                                    The second parameter is a callback that is called when the form send the submit event.
+                                    The second parameter is a callback that is executed when the form send the submit event.
                                     You can receive 3 values in this callback, the field value, the element with the validation and the option value that was specified on html (See the step 4, in our case the option was "true").
                                     In this callback you can return true or false, being that <strong>false</strong> will stop the submit event and return your custom message to user.
                                     The last parameter of addMethod is a custom message that is used when your validation return false.
@@ -125,14 +120,14 @@
                                 </pre>
                                 <p>
                                     You can create an alias to your model.js creating a requirejs-config.js on your module.
-                                    However, this is not a required step, you can use the full path instead, but these configuration is highly <a href="http://devdocs.magento.com/guides/v2.0/javascript-dev-guide/javascript/requirejs_concept.html">recommended</a>
+                                    However, this is not a required step, you can use the full path instead, but this configuration is highly <a href="http://devdocs.magento.com/guides/v2.0/javascript-dev-guide/javascript/requirejs_concept.html">recommended</a>
                                 </p>
 
                                 <h4>
                                     3. Create the bind to your form -
                                     <a target="_blank" href="https://github.com/LucasCalazans/magento-doc/blob/master/view/frontend/templates/webjump/validators.phtml">validators.phtml</a>
                                 </h4>
-                                <pre class="brush: html; first-line: 21; highlight: [25]">
+                                <pre class="brush: html; first-line: 21; highlight: [23,25]">
                                     <script type="text/x-magento-init">
                                         {
                                             "#custom-form": {
@@ -143,7 +138,9 @@
                                     </script>
                                 </pre>
                                 <p>
-
+                                    The third step is add the code above in your form container (.phtml) to create a bind with your <i>model.js</i>.
+                                    The line 23 is your container that you want to use your validation (You can put any css selector here).
+                                    You need to put your model alias here <strike>or the full path</strike> to Magento load your .js file.
                                 </p>
 
                                 <h4>
@@ -152,9 +149,12 @@
                                 </h4>
                                 <pre class="brush: html; first-line: 7; highlight: [8]">
                                     <div class="control">
-                                        <input data-validate="{ required:true, 'custom-validator': true }" />
+                                        <input data-validate="{ required: true, 'custom-validator': true }" />
                                     </div>
                                 </pre>
+                                <p>
+                                    Finally you need to add the <strong>data-validate</strong> with your custom validator name in your field and your validator is configured.
+                                </p>
                             </div>
                         </div>
                     </section>
