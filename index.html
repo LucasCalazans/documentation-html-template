@@ -104,9 +104,10 @@
                                 <p>
                                     The <strong>addMethod</strong> function accepts 3 parameters.
                                     The first is the validation name, that you will use to call it on html.
-                                    The second parameter is a callback that will be called when the form send the submit event.
+                                    The second parameter is a callback that is called when the form send the submit event.
                                     You can receive 3 values in this callback, the field value, the element with the validation and the option value that was specified on html (See the step 4, in our case the option was "true").
                                     In this callback you can return true or false, being that <strong>false</strong> will stop the submit event and return your custom message to user.
+                                    The last parameter of addMethod is a custom message that is used when your validation return false.
                                 </p>
 
                                 <h4>
@@ -141,6 +142,9 @@
                                         }
                                     </script>
                                 </pre>
+                                <p>
+
+                                </p>
 
                                 <h4>
                                     4. Add your new validator to your field -
